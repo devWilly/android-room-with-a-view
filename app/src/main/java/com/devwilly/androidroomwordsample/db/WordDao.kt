@@ -1,5 +1,6 @@
 package com.devwilly.androidroomwordsample.db
 
+import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
@@ -20,5 +21,5 @@ interface WordDao {
 
     @Query("SELECT * from word_table ORDER BY word ASC")
 //    @Query("SELECT * from word_table ORDER BY word DESC")
-    fun getAllWords()
+    fun getAllWords(): LiveData<List<Word>>
 }
