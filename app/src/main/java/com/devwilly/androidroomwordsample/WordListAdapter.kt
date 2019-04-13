@@ -30,7 +30,9 @@ class WordListAdapter(private val context: Context) : RecyclerView.Adapter<WordL
         return mWordList.size
     }
 
-    fun setWordList(wordList: List<Word>) {
+    fun setWordList(wordList: List<Word>?) {
+        if (wordList.isNullOrEmpty()) return
+
         mWordList = wordList
         notifyDataSetChanged()
     }
